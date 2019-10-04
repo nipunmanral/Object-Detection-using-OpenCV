@@ -8,9 +8,10 @@ Python Version = 3.6
 
 OpenCV Version = 4.1.1
 
-#Code Execution
+# Code Execution
 
-**Selective Search**
+### Selective Search
+
 To run the code, download it and execute using the following command in terminal/command prompt:
 
   python selective_search.py < input_image_path> <annotated_image_path> <strategy>
@@ -22,7 +23,8 @@ To run the code, download it and execute using the following command in terminal
 Eg: python selective_search.py ./JPEGImages/1.jpg ./Annotations/1.xml color
 
 
-**EdgeBoxes**
+### EdgeBoxes
+
 To run the code, download it and execute using the following command in terminal/command prompt:
 
   python edgeboxes.py < input_image_path> <annotated_image_path>
@@ -35,7 +37,7 @@ Eg: python edgeboxes.py ./JPEGImages/1.jpg ./Annotations/1.xml
 ## Data
 The sample color images are present in `/JPEGImages/` folder and their corresponding ground truth boxes are present in `/Annotations/` folder. An example of the bounding box coordinates (saved in .xml file) is in the following format:
 
-<object>
+``<object>
   <name>aeroplane</name>
   <pose>Unspecified</pose>
   <truncated>0</truncated>
@@ -46,7 +48,7 @@ The sample color images are present in `/JPEGImages/` folder and their correspon
     <xmax>426</xmax>
     <ymax>209</ymax>
   </bndbox>
-</object>
+</object>``
 
 where the object label is “aeroplane”, and the bounding box is described in the format of (xmin, ymin, xmax, ymax) = (68, 76, 426, 209), namely, the left-top and right-bottom points of the box.
 
@@ -116,8 +118,11 @@ In general, Selective Search using all strategies had a better performance (bett
 The test image shown above in Appendix B - Image 5 has been annotated with 13 ground truth boxes. On selecting the proposed bounding boxes with the top 100 scores, we found that the number of proposal boxes that have an IoU greater than 0.5 with any of the ground truth boxes is 12. Out of these 12 proposal boxes, only four ground truth boxes have an overlap with atleast one proposal box. The recall for this image using edgeboxes algorithm is 0.307.
 
 Following are a few cases of experimenting with different values of alpha and beta:
+
 Case 1: Low alpha and low beta values (< 0.2) gave the worst performance with no proposal bounding boxes being found that had an IoU > 0.5.
+
 Case 2: Setting alpha and beta as 0.5 gave the performance in terms of recall. The algorithm found slightly lesser bounding boxes that had an IoU > 0.5 (detected between 7-10) but the number of ground truth boxes that had an overlap with atleast one proposal box was much higher (detected 6).
+
 Case 3: Setting alpha and beta as 0.8 had a poorer recall than case 2 , but it generally had more proposal boxes that had an IoU > 0.5 (detected 13 approximately). The number of ground truth boxes that had an overlap with atleast one proposal box was around 3.
 
 Setting alpha as 0.5 and beta as 0.5 seemed to give me the best performance in terms of recall.

@@ -14,7 +14,7 @@ OpenCV Version = 4.1.1
 
 To run the code, download it and execute using the following command in terminal/command prompt:
 
-    python selective_search.py < input_image_path> <annotated_image_path> <strategy>
+    python selective_search.py <input_image_path> <annotated_image_path> <strategy>
 
 - input_image_path: Enter the image file name including path
 - annotated_image_path: Enter the annotated image file name including path
@@ -27,7 +27,7 @@ Eg: python selective_search.py ./JPEGImages/1.jpg ./Annotations/1.xml color
 
 To run the code, download it and execute using the following command in terminal/command prompt:
 
-    python edgeboxes.py < input_image_path> <annotated_image_path>
+    python edgeboxes.py <input_image_path> <annotated_image_path>
 
 - input_image_path: Enter the image file name including path
 - annotated_image_path: Enter the annotated image file name including path
@@ -78,7 +78,7 @@ The Edge Boxes algorithm uses edges to detect objects. The overlying idea of thi
 
 The steps followed in implementing the code are as follows:
 1) Read the image specified in the input_image_path (By default OpenCV reads it in BGR format)
-2) Download the edge detection model from the below link: https://github.com/opencv/opencv_extra/blob/master/testdata/cv/ximgproc/model.yml.gz or use the model available along with the code.
+2) Download the edge detection model from the below link: https://github.com/opencv/opencv_extra/blob/master/testdata/cv/ximgproc/model.yml.gz or use the model (model.yml.gz) available along with the code.
 3) Create a edge detection object using createStructuredEdgeDetection()
 4) Convert the image from BGR format to RGB format
 5) Detect the edges in the image and create an orientation map. Suppress the edges using Non-Maxima Suppression.

@@ -8,7 +8,7 @@ Python Version = 3.6
 
 OpenCV Version = 4.1.1
 
-# Code Execution
+## Code Execution
 
 ### Selective Search
 
@@ -38,16 +38,27 @@ Eg: python edgeboxes.py ./JPEGImages/1.jpg ./Annotations/1.xml
 The sample color images are present in `/JPEGImages/` folder and their corresponding ground truth boxes are present in `/Annotations/` folder. An example of the bounding box coordinates (saved in .xml file) is in the following format:
 
 ``<object>
+
   <name>aeroplane</name>
+
   <pose>Unspecified</pose>
+
   <truncated>0</truncated>
+
   <difficult>0</difficult>
+
   <bndbox>
+
     <xmin>68</xmin>
+
     <ymin>76</ymin>
+
     <xmax>426</xmax>
+
     <ymax>209</ymax>
+
   </bndbox>
+  
 </object>``
 
 where the object label is “aeroplane”, and the bounding box is described in the format of (xmin, ymin, xmax, ymax) = (68, 76, 426, 209), namely, the left-top and right-bottom points of the box.
